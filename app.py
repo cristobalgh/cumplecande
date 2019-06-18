@@ -10,7 +10,7 @@ def index():
     si_cumple = now.month==12 and now.day==27
 
     today = date.today()
-    my_birthday = date(today.year, 6, 19)
+    my_birthday = date(today.year, 12, 27)
     if my_birthday < today:
         my_birthday = my_birthday.replace(year=today.year + 1)
     time_to_birthday = abs(my_birthday - today)
