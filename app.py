@@ -7,9 +7,7 @@ app = Flask(__name__)
 def index():
     now = datetime.datetime.now()
     new_year = now.month == 12 and now.day==27
-    return new_year
-
-    #return render_template("index.html", new_year=new_year)
+    return render_template("index.html", new_year=new_year)
     #return 'Si! esta funcionando aún.'
 
 if __name__=="__main__":
