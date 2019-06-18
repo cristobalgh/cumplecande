@@ -19,5 +19,12 @@
       <h1 class="display-1">No, hoy no.</h1>
       <h1 class="display-2">Falta {{falta}} día.</h1>
     {%endif%}
+    {%if falta > 30%}
+    <span class="badge badge-success">Tranqui, queda ene.</span>
+    {%elif falta <= 30 and falta >=7 %}
+    <span class="badge badge-warning">Cuidado, queda poco!</span>
+    {%else%}
+    <span class="badge badge-danger">Ojo! queda muy poco!</span>
+    {%endif%}
   </body>
 </html>
