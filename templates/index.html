@@ -1,17 +1,23 @@
 <html>
   <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Está de cumpleaños Candelaria?</title>
   </head>
   <body>
     {%if si_cumple%}
-      <h1>Si! Feliz cumpleaños!!</h1>
+      <!--<h1>Si! Feliz cumpleaños!!</h1>-->
+      <h1 class="display-1">Si! Feliz cumpleaños!</h1>
     {%elif falta > 1%}
-      <h1>No, hoy no.</h1>
-      <h2>Faltan {{falta}} días.</h2>
+      <!--<h1>No, hoy no.</h1>
+      <h2>Faltan {{falta}} días.</h2>-->
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Faltan {{falta}} días.</h1>
     {%else%}
-      <h1>No, hoy no.</h1>
-      <h2>Falta {{falta}} día.</h2>
+      <!--<h1>No, hoy no.</h1>
+      <h2>Falta {{falta}} día.</h2>-->
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Falta {{falta}} día.</h1>
     {%endif%}
   </body>
 </html>
