@@ -6,9 +6,12 @@
   <body>
     {%if si_cumple%}
       <h1>Si! Feliz cumpleaños!!</h1>
-    {%else%}
+    {%elif falta > 1%}
       <h1>No, hoy no.</h1>
       <h2>Faltan {{falta}} días.</h2>
+    {%else%}
+      <h1>No, hoy no.</h1>
+      <h2>Falta {{falta}} día.</h2>
     {%endif%}
   </body>
 </html>
