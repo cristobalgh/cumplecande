@@ -1,22 +1,28 @@
 from flask import Flask, render_template
 import datetime
-from datetime import date
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     now = datetime.datetime.now()
-    si_cumple = now.month==12 and now.day==27
 
-    today = date.today()
-    my_birthday = date(today.year, 12, 27)
-    if my_birthday < today:
-        my_birthday = my_birthday.replace(year=today.year + 1)
-    time_to_birthday = abs(my_birthday - today)
-    falta = time_to_birthday.days
+    my_birthday = datetime.datetime(now.year, 12, 27, 0, 0, 0)
+    #my_birthday = datetime.datetime(now.year, 12, 27, 3, 3, 0)
+    #hora de nacimiento real
+    #my_birthday = datetime.datetime(now.year, now.month + 3, now.day )  #pruebas
 
-    return render_template("index.html", si_cumple=si_cumple, falta=falta)
+    si_cumple = now.month==my_birthday.month and now.day==my_birthday.day
+
+    if my_birthday < now:
+        my_birthday = my_birthday.replace(year=now.year + 1)
+
+    dt = abs(my_birthday - now)
+    falta = dt.days
+    segs = round(dt.total_seconds())
+    horas = round(segs/60/60)
+
+    return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
 if __name__=="__main__":
     app.run()

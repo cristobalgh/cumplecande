@@ -13,18 +13,21 @@
       <h2>Faltan {{falta}} días.</h2>-->
       <h1 class="display-1">No, hoy no.</h1>
       <h1 class="display-2">Faltan {{falta}} días.</h1>
-    {%else%}
+    {%elif falta == 1%}
       <!--<h1>No, hoy no.</h1>
       <h2>Falta {{falta}} día.</h2>-->
       <h1 class="display-1">No, hoy no.</h1>
       <h1 class="display-2">Falta {{falta}} día.</h1>
-    {%endif%}
-    {%if falta > 30%}
-    <span class="badge badge-success">Tranqui, queda ene.</span>
-    {%elif falta <= 30 and falta >=7 %}
-    <span class="badge badge-warning">Cuidado, queda poco!</span>
     {%else%}
-    <span class="badge badge-danger">Ojo! queda muy poco!</span>
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Pero faltan {{horas}} horas!</h1>
+    {%endif%}
+    {%if falta > 30 and si_cumple!=1%}
+    <span class="badge badge-success">Tranqui, queda ene, {{segs}} segundos.</span>
+    {%elif falta <= 30 and falta >=7 and si_cumple!=1 %}
+    <span class="badge badge-warning">Cuidado, queda poco! {{segs}} segundos.</span>
+    {%elif si_cumple!=1%}
+    <span class="badge badge-danger">Ojo! queda muy poco! {{segs}} segundos.</span>
     {%endif%}
   </body>
 </html>
