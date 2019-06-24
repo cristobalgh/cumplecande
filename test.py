@@ -16,3 +16,5 @@ if my_birthday < today:
     my_birthday = my_birthday.replace(year=today.year + 1)
 dt = my_birthday - today
 print(dt.total_seconds())
+
+#jojojo
