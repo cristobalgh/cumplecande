@@ -23,13 +23,14 @@
       <h1 class="display-1">No, hoy no.</h1>
       <h1 class="display-2">Pero faltan {{horas}} horas!</h1>
     {%endif%}
+      <h1>
     {%if falta > 30 and si_cumple!=1%}
-      <span class="badge badge-success align-middle">Tranqui, queda ene, {{segs}} segundos.</span>
+      <span class="badge badge-success">Tranqui, queda ene, {{segs}} segundos.</span>
     {%elif falta <= 30 and falta >=7 and si_cumple!=1 %}
       <span class="badge badge-warning">Cuidado, queda poco! {{segs}} segundos.</span>
     {%elif si_cumple!=1%}
       <span class="badge badge-danger">Ojo! queda muy poco! {{segs}} segundos.</span>
     {%endif%}
-
+    </h1>
   </body>
 </html>
