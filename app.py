@@ -21,7 +21,7 @@ def index():
     falta = dt.days
     segs = round(dt.total_seconds())
     horas = round(segs/60/60)
-    segs = format(s,',d')
+    segs = format(segs,',d')
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
