@@ -23,7 +23,7 @@ def index():
     horas = round(segs/60/60)
     segs = format(segs,',d')
     segs = str(segs)
-    segs.replace(",","n")
+    segs=segs.replace(",",".")
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
