@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import datetime 
+import datetime
 
 app = Flask(__name__)
 
@@ -20,6 +20,7 @@ def index():
     dt = abs(my_birthday - now)
     falta = dt.days
     segs = round(dt.total_seconds())
+    segs = format(s,',d')
     horas = round(segs/60/60)
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
