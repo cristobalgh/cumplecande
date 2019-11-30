@@ -18,9 +18,9 @@ def index():
         my_birthday = my_birthday.replace(year=now.year + 1)
 
     dt = abs(my_birthday - now)
-    falta = str(dt)
+    #falta = str(dt)
 
-    #falta = dt.days
+    falta = dt.days
     segs = round(dt.total_seconds())
     horas = round(segs/60/60)
     segs = format(segs,',d')
