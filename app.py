@@ -18,13 +18,28 @@ def index():
         my_birthday = my_birthday.replace(year=now.year + 1)
 
     dt = abs(my_birthday - now)
-    falta = dt.days
-    segs = round(dt.total_seconds())
-    horas = round(segs/60/60)
-    d=str(dt)
-    d=d.replace("days","días")
-    d=d.replace("day", "día")
-    segs=d
+    #falta = dt.days
+    #segs = round(dt.total_seconds())
+    #horas = round(segs/60/60)
+    #d=str(dt)
+    #d=d.replace("days","días")
+    #d=d.replace("day", "día")
+    #segs=d
+    
+    days = dt.days
+    falta = days
+    s = dt.seconds
+    # hours
+    hours = s // 3600
+    horas = hours
+    # remaining seconds
+    s = s - (hours * 3600)
+    # minutes
+    minutes = s // 60
+    # remaining seconds
+    seconds = s - (minutes * 60)
+    
+    segs = str(days) + "d" + str(hours) + "h" + str(minutes) + "m" + str(seconds) + "s"
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
