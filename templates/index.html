@@ -9,23 +9,19 @@
     {%if si_cumple%}
       <!--<h1>Si! Feliz cumpleaños!!</h1>-->
       <h1 class="display-1">Si! Feliz cumpleaños!</h1>
-    {%elif falta > 1%}
-      <!--<h1>No, hoy no.</h1>
-      <h2>Faltan {{falta}} días.</h2>-->
-      <h1 class="display-1">No, hoy no.</h1>
-      <h1 class="display-2">Faltan {{falta}} días.</h1>
     {%elif falta == 1%}
-      <!--<h1>No, hoy no.</h1>
-      <h2>Falta {{falta}} día.</h2>-->
       <h1 class="display-1">No, hoy no.</h1>
       <h1 class="display-2">Falta {{falta}} día.</h1>
+    {%elif falta > 1%}
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Faltan {{falta}} días.</h1>
     {%else%}
       <h1 class="display-1">No, hoy no.</h1>
       <h1 class="display-2">Pero faltan {{horas}} horas!</h1>
     {%endif%}
       <h1>
     {%if falta > 30 and si_cumple!=1%}
-      <span class="badge badge-success">Tranqui, queda ene, {{segs}} h:m:s.</span>
+      <span class="badge badge-success">Tranqui, queda ene, {{segs}} (h:m:s)</span>
     {%elif falta <= 30 and falta >=7 and si_cumple!=1 %}
       <span class="badge badge-warning">Queda poco! {{segs}} h:m:s.</span>
     {%elif si_cumple!=1%}

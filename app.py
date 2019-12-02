@@ -8,9 +8,9 @@ def index():
     now = datetime.datetime.now()
 
     #my_birthday = datetime.datetime(now.year, 12, 27, 0, 0, 0)
-    my_birthday = datetime.datetime(now.year, 12, 27, 3, 3, 0)
-    #hora de nacimiento real
-    #my_birthday = datetime.datetime(now.year, now.month, now.day)  #pruebas
+    my_birthday = datetime.datetime(now.year, 12, 27, 3, 3, 3)
+    #hora de nacimiento real, los segundos son invento mio...
+    #(año, mes, dia, hora, minuto, segundo)
 
     si_cumple = now.month==my_birthday.month and now.day==my_birthday.day
 
@@ -18,17 +18,12 @@ def index():
         my_birthday = my_birthday.replace(year=now.year + 1)
 
     dt = abs(my_birthday - now)
-    #falta = str(dt)
-
     falta = dt.days
     segs = round(dt.total_seconds())
-    horas = round(segs/60/60)
-    segs = format(segs,',d')
-    segs = str(segs)
-    segs=segs.replace(",",".")
-    
+    horas = round(segs/60/60))
     d=str(dt)
     d=d.replace("days","días")
+    d=d.replace("day", "día")
     segs=d
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
