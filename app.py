@@ -26,6 +26,10 @@ def index():
     segs = format(segs,',d')
     segs = str(segs)
     segs=segs.replace(",",".")
+    
+    d=str(dt)
+    d=d.replace("days","días")
+    segs=d
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
