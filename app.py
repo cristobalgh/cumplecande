@@ -39,7 +39,7 @@ def index():
     # remaining seconds
     seconds = s - (minutes * 60)
     
-    segs = str(days) + "d" + str(hours) + "h" + str(minutes) + "m" + str(seconds) + "s"
+    segs = str(days) + "d " + str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s"
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
