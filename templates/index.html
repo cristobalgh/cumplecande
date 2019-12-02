@@ -25,11 +25,11 @@
     {%endif%}
       <h1>
     {%if falta > 30 and si_cumple!=1%}
-      <span class="badge badge-success">Tranqui, queda ene, {{segs}} segundos.</span>
+      <span class="badge badge-success">Tranqui, queda ene, {{segs}} h:m:s.</span>
     {%elif falta <= 30 and falta >=7 and si_cumple!=1 %}
-      <span class="badge badge-warning">Queda poco! {{segs}} segundos.</span>
+      <span class="badge badge-warning">Queda poco! {{segs}} h:m:s.</span>
     {%elif si_cumple!=1%}
-      <span class="badge badge-danger">Ojo! Queda muy poco! {{segs}} segundos.</span>
+      <span class="badge badge-danger">Ojo! Queda muy poco! {{segs}} h:m:s.</span>
     {%endif%}
     </h1>
   </body>
