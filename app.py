@@ -20,7 +20,7 @@ def index():
     dt = abs(my_birthday - now)
     falta = dt.days
     segs = round(dt.total_seconds())
-    horas = round(segs/60/60))
+    horas = round(segs/60/60)
     d=str(dt)
     d=d.replace("days","días")
     d=d.replace("day", "día")
