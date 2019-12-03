@@ -40,6 +40,27 @@ def index():
     seconds = s - (minutes * 60)
     
     segs = str(days) + "d " + str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s"
+    
+    intervals = (
+    ('m', 2540160),  # 60 * 60 * 24 * 7 * 4.2 aprox
+    ('w', 604800),  # 60 * 60 * 24 * 7
+    ('d', 86400),    # 60 * 60 * 24
+    ('h', 3600),    # 60 * 60
+    ('m', 60),
+    ('s', 1),
+    )
+
+    def display_time(seconds, granularity=6):
+        result = []
+
+        for name, count in intervals:
+            value = seconds // count
+            if value:
+                seconds -= value * count
+                result.append("{}{}".format(value, name))
+        return ' '.join(result[:granularity])
+    
+    segs = str(display_time(dt.seconds))
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
