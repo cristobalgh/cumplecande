@@ -60,7 +60,7 @@ def index():
                 result.append("{}{}".format(value, name))
         return ' '.join(result[:granularity])
     
-    segs = str(display_time(dt.seconds))
+    segs = str(display_time(dt.total_seconds()))
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
 
