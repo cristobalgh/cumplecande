@@ -25,7 +25,7 @@ def index():
     #d=d.replace("days","días")
     #d=d.replace("day", "día")
     #segs=d
-    
+
     days = dt.days
     falta = days
     s = dt.seconds
@@ -38,12 +38,12 @@ def index():
     minutes = s // 60
     # remaining seconds
     seconds = s - (minutes * 60)
-    
+
     segs = str(days) + "d " + str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s"
-    
+
     intervals = (
     ('m', 2540160),  # 60 * 60 * 24 * 7 * 4.2 aprox
-    ('w', 604800),  # 60 * 60 * 24 * 7
+    ('S', 604800),  # 60 * 60 * 24 * 7
     ('d', 86400),    # 60 * 60 * 24
     ('h', 3600),    # 60 * 60
     ('m', 60),
@@ -59,7 +59,7 @@ def index():
                 seconds -= value * count
                 result.append("{}{}".format(value, name))
         return ' '.join(result[:granularity])
-    
+
     segs = str(display_time(round(dt.total_seconds())))
 
     return render_template("index.html", si_cumple=si_cumple, falta=falta, segs=segs, horas=horas)
