@@ -7,8 +7,8 @@ app = Flask(__name__)
 def index():
     now = datetime.datetime.now()
 
-    #my_birthday = datetime.datetime(now.year, 12, 27, 0, 0, 0)
-    my_birthday = datetime.datetime(now.year, 12, 18, 3, 3, 3)
+    my_birthday = datetime.datetime(now.year, 12, 27, 0, 0, 0)
+    #my_birthday = datetime.datetime(now.year, 12, 27, 3, 3, 3)
     #hora de nacimiento real, los segundos son invento mio...
     #(año, mes, dia, hora, minuto, segundo)s
 
